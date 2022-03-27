@@ -2,7 +2,7 @@
   <div>
     <h1>Editor's Pick Online Learning Path</h1>
     <el-divider />
-    <el-carousel :interval="5000" arrow="always" height="400px">
+    <el-carousel trigger="click" arrow="always" height="400px">
       <el-carousel-item v-for="item in 3" :key="item">
         <el-row>
           <el-col

@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <el-container>
+    <div class="top-bar">
     <!-- <div class="line "></div> -->
     <el-menu
       :default-active="activeIndex2"
@@ -10,7 +11,7 @@
       text-color="#fff"
       active-text-color="#fff"
     >
-      <el-menu-item index="1">Menu</el-menu-item>
+      <el-menu-item index="1" @click="slideMenu">Menu</el-menu-item>
       
       <el-menu-item index="2">
         <img class="logo" :src="require(`../assets/${logox}`)" />
@@ -111,6 +112,7 @@
       </div>
     </el-dialog>
   </div>
+  </el-container>
 </template>
 
 <script>
@@ -137,7 +139,8 @@ export default {
       logox: 'logoX.png',
       google_logo: 'google-logo.svg',
       facebook_logo: 'facebook-logo.svg',
-      conicleX:'ConicleX.png'
+      conicleX:'ConicleX.png',
+      isCollapse:false,
     }
   },
   methods: {
@@ -147,11 +150,24 @@ export default {
     handleChange(val) {
       console.log(val)
     },
+    slideMenu(){
+      this.isCollapse=!this.isCollapse
+      this.$emit('slidemenu',this.isCollapse)
+    },
   },
 }
 </script>
 
 <style scoped>
+
+.container{
+  display: flex;
+}
+
+.top-bar{
+  width:100%
+}
+
 .form {
   margin: 10px 0px;
 }
@@ -177,7 +193,6 @@ export default {
   margin:auto;
 
 }
-
 .logo-button-login {
   max-width: 20px;
   max-height: 20px;

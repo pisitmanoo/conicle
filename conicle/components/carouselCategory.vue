@@ -2,19 +2,40 @@
   <div>
     <h1>Category</h1>
     <el-divider />
-    <div class="container">
+    <!-- <div class="container">
+      <img
+        src="../assets/Category1.jpg"
+      class="img"/>
+
+      <div class="centered" >Centered</div>
+    </div> -->
+
+    <el-carousel interval: arrow="always" height="400px">
+      <el-carousel-item v-for="item in 3" :key="item">
+        <el-row>
+          <el-col
+            :span="6"
+            v-for="(o, index) in 4"
+            :key="o"
+            :offset="index > 3 ? 2 : 0"
+            
+          >
+            <el-card :body-style="{ padding: '0px' }">
+              <el-row>
+                <div class="container">
       <img
         src="../assets/Category1.jpg"
       class="img"/>
 
       <div class="centered" >Centered</div>
     </div>
-
-    <!-- <el-carousel :interval="4000" type="card" height="200px">
-      <el-carousel-item v-for="item in 6" :key="item">
-        <h3 class="medium">{{ item }}</h3>
+                
+              </el-row>
+            </el-card>
+          </el-col>
+        </el-row>
       </el-carousel-item>
-    </el-carousel> -->
+    </el-carousel>
   </div>
 </template>
 

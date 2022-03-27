@@ -1,9 +1,5 @@
 <template>
-  <div class="container">
-    <el-radio-group v-model="isCollapse" style="margin-bottom: 20px">
-      <el-radio-button :label="false">expand</el-radio-button>
-      <el-radio-button :label="true">collapse</el-radio-button>
-    </el-radio-group>
+  <div class="container" >
     <el-menu
       default-active="2"
       class="el-menu-vertical-demo"
@@ -35,10 +31,6 @@
         <span slot="title">Explore</span>
       </el-menu-item>
     </el-menu>
-    
-
-  
-
   </div>
 </template>
 
@@ -51,15 +43,16 @@
 
 <script>
 export default {
+  props:{
+    isCollapse: Boolean,
+  },
   data() {
     return {
-      isCollapse: true,
+      // isCollapse: true,
+      
     }
   },
   methods: {
-    // statechange(){
-
-    // },
     handleOpen(key, keyPath) {
       console.log(key, keyPath)
     },
