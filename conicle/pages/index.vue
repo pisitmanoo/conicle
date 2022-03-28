@@ -2,7 +2,7 @@
   <div >
     <headerbar @slidemenu="slidemenu" />
     <div style="display:flex">
-      <div :span="6"> <Header :isCollapse="isCollapse"/></div>
+      <div > <Slidemenu :isCollapse="isCollapse"/></div>
       <div>
         <CarouselTop />
         <CarouselLearning />
@@ -11,8 +11,36 @@
       /></div>
     </div>
     
+  
+    <!-- <el-row :gutter="20">
+      <el-col type="flex" :span="24"><headerbar @slidemenu="slidemenu" />
+      </el-col>
+    </el-row >
+    <el-row type="flex" :gutter="20">
+      <el-col :span="4"> <Slidemenu :isCollapse="isCollapse"/></el-col>
+      <el-col  :span="20" type="flex">
+        <CarouselTop />
+        <CarouselLearning />
+        <CarouselCategory />
+        <Footer
+      /></el-col>
+    </el-row> -->
     
+    
+    
+  
+
+
+
+
+
+
   </div>
+
+  
+
+
+
 </template>
 
 <script>
@@ -20,7 +48,7 @@ import CarouselTop from '../components/carouselTop.vue'
 import CarouselLearning from '../components/carouselLearning.vue'
 import CarouselCategory from '../components/carouselCategory.vue'
 import Footer from '../components/footer.vue'
-import Header from '../components/header.vue'
+import Slidemenu from '../components/slidemenu.vue'
 import Headerbar from '../components/headerbar.vue'
 
 export default {
@@ -30,7 +58,7 @@ export default {
     CarouselLearning,
     CarouselCategory,
     Footer,
-    Header,
+    Slidemenu,
     Headerbar,
   },
   data() {
@@ -47,6 +75,12 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+  font-family: 'Kanit';
+}
+
 .el-header,
 .el-footer {
   background-color: #b3c0d1;
@@ -80,5 +114,9 @@ body > .el-container {
 
 .el-container:nth-child(7) .el-aside {
   line-height: 320px;
+}
+
+.weight-components{
+  weight:100%
 }
 </style>

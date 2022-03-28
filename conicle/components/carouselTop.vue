@@ -1,11 +1,13 @@
 <template>
-  <div>
-    <el-carousel :interval="4000" type="card"  >
+  <div >
+    <el-carousel :interval="4000" type="card" class="img-box" height="500px">
       <el-carousel-item  v-for="item in images" :key="item.id">
         <img
-          class="image"
+          class="image img-box"
           :src="require(`../assets/${item.image}`)"
           :alt="item.image"
+          :span="4"
+          :offset="4"
         />
       </el-carousel-item>
     </el-carousel>
@@ -54,21 +56,8 @@ export default {
 >
 
 <style>
-.el-carousel__item h3 {
-  color: #475669;
-  font-size: 14px;
-  opacity: 0.75;
-  line-height: 200px;
-  margin: 0;
-}
 
-.el-carousel__item:nth-child(2n) {
-  background-color: #99a9bf;
-}
 
-.el-carousel__item:nth-child(2n + 1) {
-  background-color: #d3dce6;
-}
 
 .image {
   max-width: 800;
@@ -76,4 +65,9 @@ export default {
   width: 100%;
   height: 100%;
 }
+.img-box{
+  border-radius: 16px !important;
+  border-color: none  !important;
+}
+
 </style>
