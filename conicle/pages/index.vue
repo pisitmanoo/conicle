@@ -116,7 +116,5 @@ body > .el-container {
   line-height: 320px;
 }
 
-.weight-components{
-  weight:100%
-}
+
 </style>
